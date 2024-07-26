@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">HayatWallet</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="landing_page_logo">Landing Page Logo</string>
+    <string name="welcome_message_for_landing_page">Welcome Message For Landing Page</string>
+    <string name="welcomeHeader1"> <b>Finans\'</b>a</string>
+    <string name="welcomeHeader2">Hoşgeldiniz</string>
+    <string name="description">X Dakikada birbirimizi tanıyıp Hayat Finans dünyasının müşterisi olabilirsiniz.</string>
+    <string name="ButttonForLogInPage">Müşteri Olmak İstiyorum</string>
+    <string name="hintForTC"><b>Müşteri No /TCKN</b></string>
+</resources>
