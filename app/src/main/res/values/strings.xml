@@ -9,4 +9,11 @@
     <string name="description">X Dakikada birbirimizi tanıyıp Hayat Finans dünyasının müşterisi olabilirsiniz.</string>
     <string name="ButttonForLogInPage">Müşteri Olmak İstiyorum</string>
     <string name="hintForTC"><b>Müşteri No /TCKN</b></string>
+    <string name="passwordHint"><b>Şifre</b></string>
+    <string name="Login">Giriş Yap</string>
+    <string name="ForgetPassword"> Şifremi Unuttum / Anında Şifre</string>
+    <string name="SimBloke"> SIM Bloke Kaldır</string>
+
+
+
 </resources>
