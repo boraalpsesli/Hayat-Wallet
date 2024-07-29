@@ -3,7 +3,9 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="landingPageBackgroundEdgeColor">#e0e0e0</color>
+    <color name="inputborder">#eaeaea</color>
     <color name="buttonborder">#ededed</color>
     <color name="startColor">#01a05f</color>
     <color name="endColor">#19c765</color>
+    <color name="blue">#2a418a</color>
 </resources>
