@@ -13,6 +13,7 @@ import com.example.hayatwallet.R
 import com.example.hayatwallet.databinding.FragmentLandingBinding
 import androidx.navigation.Navigation
 import androidx.navigation.findNavController
+import com.example.hayatwallet.scenes.LoginFragmentDirections
 
 class LandingFragment : Fragment() {
 
