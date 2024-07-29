@@ -42,14 +42,15 @@ class LoginFragment : Fragment() {
 
     }
     private fun loginSetup(){
-        viewModel.userData.observe(viewLifecycleOwner, Observer { user->
-            if(user?.item?.isSuccess==true){
-                findNavController().navigate(ViewUserFragmentDirections.toViewUser())
+        viewModel.loginData.observe(viewLifecycleOwner, Observer { login->
+            if(login?.item?.isSuccess==true){
+                viewModel.getUser()
             }
-            else{
-                Log.e(tag,"${user?.errorMessage}")
-                Toast.makeText(requireContext(),"${user?.errorMessage}", Toast.LENGTH_LONG).show()
-            }
+
+        })
+        viewModel.userData.observe(viewLifecycleOwner, Observer {
+            findNavController().navigate(ViewUserFragmentDirections.toViewUser())
+
         })
     }
     companion object {

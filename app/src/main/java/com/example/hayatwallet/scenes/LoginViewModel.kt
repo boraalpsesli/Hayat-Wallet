@@ -4,15 +4,19 @@ import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.hayatwallet.network.Network
+import com.example.hayatwallet.network.TokenManager
 import com.example.hayatwallet.network.response.Item
 import com.example.hayatwallet.network.response.LoginRequest
 import com.example.hayatwallet.network.response.LoginResponse
+import com.example.hayatwallet.network.response.getUserResponse
 import retrofit2.Call
+import retrofit2.Callback
 import retrofit2.Response
+import kotlin.math.log
 
 class LoginViewModel:ViewModel() {
-    val userData=MutableLiveData<LoginResponse?>()
-
+    val loginData=MutableLiveData<LoginResponse?>()
+    val userData=MutableLiveData<getUserResponse?>()
 
      fun login(uName:String,password:String){
          val user=LoginRequest(uName,password)
@@ -21,10 +25,11 @@ class LoginViewModel:ViewModel() {
                  call: Call<LoginResponse>,
                  response: Response<LoginResponse>) {
                  if(response.isSuccessful && response.body()!=null){
-                        userData.postValue(response.body())
+                        loginData.postValue(response.body())
+                     TokenManager.token=loginData.value?.item?.token
                      }
                  else {
-                        userData.postValue(response.body())
+                        loginData.postValue(response.body())
                  }
              }
 
@@ -34,4 +39,22 @@ class LoginViewModel:ViewModel() {
                            }
          })
      }
+    fun getUser(){
+        val token=TokenManager.token
+        Network.service.getUser("Bearer $token").enqueue(object : Callback<getUserResponse>{
+            override fun onResponse(
+                call: Call<getUserResponse>,
+                response: Response<getUserResponse>
+            ) {
+                if(response.isSuccessful && response.body()!=null){
+                    val temp=response.body()
+                    userData.postValue(temp)
+                }
+            }
+
+            override fun onFailure(call: Call<getUserResponse>, t: Throwable) {
+                println("Error")
+            }
+        })
+    }
 }
