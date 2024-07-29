@@ -49,7 +49,7 @@ class LoginFragment : Fragment() {
 
         })
         viewModel.userData.observe(viewLifecycleOwner, Observer {
-            findNavController().navigate(ViewUserFragmentDirections.toViewUser())
+            findNavController().navigate(WalletHubFragmentDirections.toWalletHub())
 
         })
     }

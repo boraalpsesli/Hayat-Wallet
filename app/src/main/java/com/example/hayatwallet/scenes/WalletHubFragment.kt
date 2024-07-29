@@ -6,29 +6,29 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.hayatwallet.R
-import com.example.hayatwallet.databinding.FragmentViewUserBinding
+import com.example.hayatwallet.databinding.FragmentLoginBinding
+import com.example.hayatwallet.databinding.FragmentWalletHubBinding
 
-
-class ViewUserFragment : Fragment() {
-    private lateinit var binding:FragmentViewUserBinding
+class WalletHubFragment : Fragment() {
+    private lateinit var binding:FragmentWalletHubBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = FragmentViewUserBinding.inflate(layoutInflater)
-        return binding.root
-    }
+        // Inflate the layout for this fragment
+        binding = FragmentWalletHubBinding.inflate(layoutInflater)
+        return binding.root    }
 
     companion object {
 
         @JvmStatic
-        fun newInstance() =
-            ViewUserFragment()
-            }
-
+        fun newInstance(param1: String, param2: String) =
+            WalletHubFragment()
+    }
 }

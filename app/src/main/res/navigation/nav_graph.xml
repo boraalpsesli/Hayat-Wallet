@@ -19,18 +19,18 @@
             android:label="fragment_login"
         tools:layout="@layout/fragment_login" >
 
+
     </fragment>
-    <action
-        android:id="@+id/toViewUser"
-        app:destination="@id/viewUserFragment"
-        app:exitAnim="@anim/nav_default_exit_anim" />
     <action
         android:id="@+id/toLoginActivity"
         app:destination="@id/loginFragment"
         app:exitAnim="@anim/nav_default_exit_anim" />
+    <action
+        android:id="@+id/toWalletHub"
+        app:destination="@id/walletHubFragment" />
     <fragment
-        android:id="@+id/viewUserFragment"
-        android:name="com.example.hayatwallet.scenes.ViewUserFragment"
-        android:label="fragment_view_user"
-        tools:layout="@layout/fragment_view_user" />
+        android:id="@+id/walletHubFragment"
+        android:name="com.example.hayatwallet.scenes.WalletHubFragment"
+        android:label="fragment_wallet_hub"
+        tools:layout="@layout/fragment_wallet_hub" />
 </navigation>
