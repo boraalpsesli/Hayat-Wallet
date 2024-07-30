@@ -13,6 +13,9 @@
     <string name="Login">Giriş Yap</string>
     <string name="ForgetPassword"> Şifremi Unuttum / Anında Şifre</string>
     <string name="SimBloke"> SIM Bloke Kaldır</string>
+    <string name="kampanyalar">Kampanyalar</string>
+    <string name="profil">Profil</string>
+    <string name="ana_sayfa">Ana Sayfa</string>
 
 
 </resources>

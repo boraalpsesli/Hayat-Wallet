@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".scenes.TabLayoutFragment">
+
+    <TableLayout
+        android:id="@+id/tableLayout"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginTop="1dp"
+        android:stretchColumns="0,1,2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/viewPager">
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/homeTxt"
+                android:layout_width="138dp"
+                android:layout_height="match_parent"
+                android:layout_column="0"
+                android:background="@color/bottomNavBar"
+                android:fontFamily="sans-serif-medium"
+                android:gravity="center"
+                android:text="@string/ana_sayfa"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/campaingTxt"
+                android:layout_width="138dp"
+                android:layout_height="match_parent"
+                android:layout_column="1"
+                android:background="@color/bottomNavBar"
+                android:fontFamily="sans-serif-medium"
+                android:gravity="center"
+                android:text="@string/kampanyalar"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/personTxt"
+                android:layout_width="138dp"
+                android:layout_height="match_parent"
+                android:layout_column="2"
+                android:background="@color/bottomNavBar"
+                android:fontFamily="sans-serif-medium"
+                android:gravity="center"
+                android:text="@string/profil"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+        </TableRow>
+    </TableLayout>
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:layout_width="409dp"
+        android:layout_height="659dp"
+        android:id="@+id/viewPager"
+        app:layout_constraintBottom_toTopOf="@+id/tableLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
