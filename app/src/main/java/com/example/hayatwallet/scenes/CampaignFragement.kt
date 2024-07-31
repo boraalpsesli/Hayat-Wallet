@@ -15,7 +15,6 @@ import com.example.hayatwallet.network.response.CampaignItemView
 class CampaignFragement : Fragment() {
         private lateinit var binding:FragmentCampaignFragementBinding
         private val viewModel:CampaignViewModel by viewModels()
-        private var data=mutableListOf<CampaignItemView>()
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -38,11 +37,14 @@ class CampaignFragement : Fragment() {
         Thread {
             viewModel.getData { campaigns ->
                 activity?.runOnUiThread {
+                    val adapter=CampaignAdapter(campaigns)
                     binding.CampaignRecyclerView.layoutManager=LinearLayoutManager(context)
-                    binding.CampaignRecyclerView.adapter=CampaignAdapter(campaigns) }
+                    binding.CampaignRecyclerView.adapter= adapter}
+
 
             }
         }.start()
+
 
     }
     companion object {

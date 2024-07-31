@@ -42,6 +42,18 @@
             <LayoutPositions>
               <option name="myPositions">
                 <map>
+                  <entry key="campaignDetails">
+                    <value>
+                      <LayoutPositions>
+                        <option name="myPosition">
+                          <Point>
+                            <option name="x" value="334" />
+                            <option name="y" value="352" />
+                          </Point>
+                        </option>
+                      </LayoutPositions>
+                    </value>
+                  </entry>
                   <entry key="landingFragment">
                     <value>
                       <LayoutPositions>
@@ -76,6 +88,16 @@
                           </Point>
                         </option>
                       </LayoutPositions>
+                    </value>
+                  </entry>
+                  <entry key="toCampaignDetails">
+                    <value>
+                      <LayoutPositions />
+                    </value>
+                  </entry>
+                  <entry key="toHub">
+                    <value>
+                      <LayoutPositions />
                     </value>
                   </entry>
                   <entry key="toLoginActivity">

@@ -47,12 +47,8 @@ class LoginFragment : Fragment() {
     private fun loginSetup(){
         viewModel.loginData.observe(viewLifecycleOwner, Observer { login->
             if(login?.item?.isSuccess==true){
-                viewModel.getUser()
+                findNavController().navigate(TabLayoutFragmentDirections.toHub())
             }
-
-        })
-        viewModel.userData.observe(viewLifecycleOwner, Observer {
-            findNavController().navigate(TabLayoutFragmentDirections.toHub())
 
         })
     }

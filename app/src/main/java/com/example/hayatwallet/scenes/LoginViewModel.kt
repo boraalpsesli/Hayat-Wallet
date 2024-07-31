@@ -16,8 +16,6 @@ import kotlin.math.log
 
 class LoginViewModel:ViewModel() {
     val loginData=MutableLiveData<LoginResponse?>()
-    val userData=MutableLiveData<getUserResponse?>()
-
      fun login(uName:String,password:String){
          val user=LoginRequest(uName,password)
          Network.service.login(user).enqueue(object:retrofit2.Callback<LoginResponse>{
@@ -39,22 +37,5 @@ class LoginViewModel:ViewModel() {
                            }
          })
      }
-    fun getUser(){
-        val token=TokenManager.token
-        Network.service.getUser("Bearer $token").enqueue(object : Callback<getUserResponse>{
-            override fun onResponse(
-                call: Call<getUserResponse>,
-                response: Response<getUserResponse>
-            ) {
-                if(response.isSuccessful && response.body()!=null){
-                    val temp=response.body()
-                    userData.postValue(temp)
-                }
-            }
 
-            override fun onFailure(call: Call<getUserResponse>, t: Throwable) {
-                println("Error")
-            }
-        })
-    }
 }
