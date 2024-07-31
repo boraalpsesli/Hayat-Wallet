@@ -37,7 +37,10 @@ class LoginFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         loginSetup()
         binding.LogInButton.setOnClickListener {
-            viewModel.login(binding.idInput.text.toString(),binding.PasswordField.text.toString())
+            val tempId="ararat2@oktein.com"
+            val tempPass="123456789Aa@"
+            //Do not forget to give input field values later
+            viewModel.login(tempId,tempPass)
         }
 
     }
@@ -49,7 +52,7 @@ class LoginFragment : Fragment() {
 
         })
         viewModel.userData.observe(viewLifecycleOwner, Observer {
-            findNavController().navigate(WalletHubFragmentDirections.toWalletHub())
+            findNavController().navigate(TabLayoutFragmentDirections.toHub())
 
         })
     }

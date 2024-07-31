@@ -34,20 +34,17 @@ class TabLayoutFragment : Fragment() {
         binding.viewPager.adapter = adapter
 
         binding.homeTxt.setOnClickListener {
-            currentTab()
-           // binding.homeTxt.background = resources.getDrawable(R.color.grey,resources.newTheme())
+            //currentTab()
             binding.viewPager.currentItem = 0
         }
 
         binding.campaingTxt.setOnClickListener {
-            currentTab()
-         //   binding.campaingTxt.background = resources.getDrawable(R.color.grey,resources.newTheme())
+           // currentTab()
             binding.viewPager.currentItem = 1
         }
 
         binding.personTxt.setOnClickListener {
-            currentTab()
-            //binding.personTxt.background = resources.getDrawable(R.color.grey,resources.newTheme())
+            //currentTab()
             binding.viewPager.currentItem = 2
         }
     }

@@ -66,21 +66,21 @@
                       </LayoutPositions>
                     </value>
                   </entry>
-                  <entry key="toLoginActivity">
-                    <value>
-                      <LayoutPositions />
-                    </value>
-                  </entry>
-                  <entry key="walletHubFragment">
+                  <entry key="tabLayoutFragment">
                     <value>
                       <LayoutPositions>
                         <option name="myPosition">
                           <Point>
-                            <option name="x" value="117" />
+                            <option name="x" value="131" />
                             <option name="y" value="342" />
                           </Point>
                         </option>
                       </LayoutPositions>
+                    </value>
+                  </entry>
+                  <entry key="toLoginActivity">
+                    <value>
+                      <LayoutPositions />
                     </value>
                   </entry>
                 </map>

@@ -20,17 +20,19 @@
         tools:layout="@layout/fragment_login" >
 
 
+
     </fragment>
+    <action
+        android:id="@+id/toHub"
+        app:destination="@id/tabLayoutFragment"
+        app:exitAnim="@anim/nav_default_exit_anim" />
     <action
         android:id="@+id/toLoginActivity"
         app:destination="@id/loginFragment"
         app:exitAnim="@anim/nav_default_exit_anim" />
-    <action
-        android:id="@+id/toWalletHub"
-        app:destination="@id/walletHubFragment" />
     <fragment
-        android:id="@+id/walletHubFragment"
-        android:name="com.example.hayatwallet.scenes.WalletHubFragment"
-        android:label="fragment_wallet_hub"
-        tools:layout="@layout/fragment_wallet_hub" />
+        android:id="@+id/tabLayoutFragment"
+        android:name="com.example.hayatwallet.scenes.TabLayoutFragment"
+        android:label="fragment_tab_layout"
+        tools:layout="@layout/fragment_tab_layout" />
 </navigation>
