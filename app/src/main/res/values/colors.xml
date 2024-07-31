@@ -8,5 +8,8 @@
     <color name="startColor">#01a05f</color>
     <color name="endColor">#19c765</color>
     <color name="blue">#2a418a</color>
-    <color name="bottomNavBar">#C0EEFF</color>
+    <color name="lightGrey">#F0F0F0</color>
+    <color name="darkGrey">#3A3A3A</color>
+    <color name="grey">#888888</color>
+    <color name="bottomNavBar">#E0E0E0</color>
 </resources>

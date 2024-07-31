@@ -5,29 +5,46 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.viewModels
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.hayatwallet.R
-
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
+import com.example.hayatwallet.databinding.FragmentCampaignFragementBinding
+import com.example.hayatwallet.network.response.CampaignItemView
 
 
 class CampaignFragement : Fragment() {
+        private lateinit var binding:FragmentCampaignFragementBinding
+        private val viewModel:CampaignViewModel by viewModels()
+        private var data=mutableListOf<CampaignItemView>()
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
 
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_campaign_fragement, container, false)
+    ): View {
+        binding=FragmentCampaignFragementBinding.inflate(layoutInflater)
+        return binding.root
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+
+        super.onViewCreated(view, savedInstanceState)
+        Thread {
+            viewModel.getData { campaigns ->
+                activity?.runOnUiThread {
+                    binding.CampaignRecyclerView.layoutManager=LinearLayoutManager(context)
+                    binding.CampaignRecyclerView.adapter=CampaignAdapter(campaigns) }
+
+            }
+        }.start()
+
+    }
     companion object {
 
         @JvmStatic

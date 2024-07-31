@@ -4,70 +4,78 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".scenes.TabLayoutFragment">
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewPager"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/lightGrey"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/tableLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <TableLayout
         android:id="@+id/tableLayout"
-        android:layout_width="match_parent"
-        android:layout_height="70dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="1dp"
         android:stretchColumns="0,1,2"
+        android:background="@color/darkGrey"
+        app:layout_constraintTop_toBottomOf="@id/viewPager"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/viewPager">
+        app:layout_constraintEnd_toEndOf="parent">
 
         <TableRow
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:layout_weight="1">
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
 
             <TextView
                 android:id="@+id/homeTxt"
-                android:layout_width="138dp"
-                android:layout_height="match_parent"
-                android:layout_column="0"
-                android:background="@color/bottomNavBar"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/tab_item_background"
                 android:fontFamily="sans-serif-medium"
                 android:gravity="center"
                 android:text="@string/ana_sayfa"
                 android:textColor="@color/black"
-                android:textSize="16sp" />
+                android:textSize="16sp"
+                android:padding="10dp"
+                android:drawableTop="@drawable/ic_home" />
 
             <TextView
                 android:id="@+id/campaingTxt"
-                android:layout_width="138dp"
-                android:layout_height="match_parent"
-                android:layout_column="1"
-                android:background="@color/bottomNavBar"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/tab_item_background"
                 android:fontFamily="sans-serif-medium"
                 android:gravity="center"
                 android:text="@string/kampanyalar"
                 android:textColor="@color/black"
-                android:textSize="16sp" />
+                android:textSize="16sp"
+                android:padding="10dp"
+                android:drawableTop="@drawable/ic_campaign" />
 
             <TextView
                 android:id="@+id/personTxt"
-                android:layout_width="138dp"
-                android:layout_height="match_parent"
-                android:layout_column="2"
-                android:background="@color/bottomNavBar"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/tab_item_background"
                 android:fontFamily="sans-serif-medium"
                 android:gravity="center"
                 android:text="@string/profil"
                 android:textColor="@color/black"
-                android:textSize="16sp" />
+                android:textSize="16sp"
+                android:padding="10dp"
+                android:drawableTop="@drawable/ic_profile" />
 
         </TableRow>
     </TableLayout>
-
-    <androidx.viewpager2.widget.ViewPager2
-        android:layout_width="409dp"
-        android:layout_height="659dp"
-        android:id="@+id/viewPager"
-        app:layout_constraintBottom_toTopOf="@+id/tableLayout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
