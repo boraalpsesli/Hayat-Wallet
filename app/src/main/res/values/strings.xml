@@ -17,6 +17,13 @@
     <string name="profil">Profil</string>
     <string name="ana_sayfa">Ana Sayfa</string>
     <string name="detaylar">Detaylar</string>
+    <string name="t_rk_liras">Türk Lirası</string>
+    <string name="Balance">6,000</string>
+    <string name="addMoney">Para Yatır</string>
+    <string name="sent">Para Gönder</string>
+    <string name="optionsmore">...</string>
+    <string name="RecyclerTitleText">Hesap Geçmişi</string>
+    <string name="ExpandRecyclerText">Hepsini Gör</string>
 
 
 </resources>

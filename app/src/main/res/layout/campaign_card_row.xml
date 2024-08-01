@@ -48,12 +48,13 @@
             android:layout_marginTop="20dp"
             android:layout_marginEnd="60dp"
             android:layout_marginBottom="30dp"
-            android:background="@drawable/btn3"
+            android:background="@drawable/btn1"
             android:text="@string/detaylar"
             android:textSize="20sp"
             app:backgroundTint="@null"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.03"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/CampaignTitle" />
 
