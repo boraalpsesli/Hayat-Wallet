@@ -1,123 +1,150 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:cardview="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/frameLayout3"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/shadow_background"
     tools:context=".scenes.WalletHubFragment">
 
-    <TextView
-        android:id="@+id/BalanceView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="16dp"
-        android:fontFamily="sans-serif-medium"
-        android:text="@string/Balance"
-        android:textSize="30sp"
-        app:drawableLeftCompat="@drawable/turkish_lira_symbol_black"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/Currency"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="7dp"
-        android:fontFamily="sans-serif-medium"
-        android:text="@string/t_rk_liras"
-        android:textColor="@color/grey"
-        android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="@+id/BalanceView"
-        app:layout_constraintTop_toBottomOf="@+id/BalanceView" />
-
-    <Button
-        android:id="@+id/addMoney"
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        android:layout_marginTop="30dp"
-        android:background="@drawable/addmoneybutton"
-        android:text="@string/addMoney"
-        android:textColor="@color/darkBlue"
-        android:textStyle="bold"
-        app:backgroundTint="@null"
-        app:layout_constraintStart_toStartOf="@+id/Currency"
-        app:layout_constraintTop_toBottomOf="@+id/Currency" />
-
-    <Button
-        android:id="@+id/sendMoney"
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        android:background="@drawable/addmoneybutton"
-        android:text="@string/sent"
-        android:textColor="@color/darkBlue"
-        android:textStyle="bold"
-        app:backgroundTint="@null"
-        app:icon="@drawable/baseline_arrow_forward_24"
-        app:iconPadding="4dp"
-        app:iconTint="@color/darkBlue"
-        app:layout_constraintEnd_toStartOf="@+id/moreOptions"
-        app:layout_constraintStart_toEndOf="@+id/addMoney"
-        app:layout_constraintTop_toTopOf="@+id/addMoney" />
-
-    <Button
-        android:id="@+id/moreOptions"
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        android:layout_marginEnd="20dp"
-        android:background="@drawable/addmoneybutton"
-        android:text="@string/optionsmore"
-        android:textColor="@color/darkBlue"
-        android:textStyle="bold"
-        app:backgroundTint="@null"
-        app:iconPadding="4dp"
-        app:iconTint="@color/darkBlue"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/addMoney" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/TransactionRecycler"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginBottom="1dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="10dp"
+        app:cardBackgroundColor="@android:color/white"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="4dp"
+        app:contentPadding="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/moreOptions"
-        app:layout_constraintStart_toStartOf="@+id/BalanceView"
-        app:layout_constraintTop_toBottomOf="@+id/RecyclerTitle"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <TextView
-        android:id="@+id/RecyclerTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:fontFamily="sans-serif-medium"
-        android:text="@string/RecyclerTitleText"
-        android:textColor="@color/grey"
-        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/addMoney"
-        app:layout_constraintTop_toBottomOf="@+id/addMoney" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
 
-    <TextView
-        android:id="@+id/ExpandRecycler"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:fontFamily="sans-serif-medium"
-        android:text="@string/ExpandRecyclerText"
-        android:textColor="@color/blue"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/moreOptions"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/RecyclerTitle"
-        app:layout_constraintTop_toBottomOf="@+id/moreOptions" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/BalanceView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="16dp"
+                android:fontFamily="sans-serif-medium"
+                android:text="@string/Balance"
+                android:textSize="30sp"
+                app:drawableLeftCompat="@drawable/turkish_lira_symbol_black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/Currency"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:fontFamily="sans-serif-medium"
+                android:text="@string/t_rk_liras"
+                android:textColor="@color/grey"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="@+id/BalanceView"
+                app:layout_constraintTop_toBottomOf="@+id/BalanceView" />
+
+            <Button
+                android:id="@+id/addMoney"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/addmoneybutton"
+                android:text="@string/addMoney"
+                android:textColor="@color/darkBlue"
+                android:textStyle="bold"
+                app:backgroundTint="@null"
+                app:layout_constraintStart_toStartOf="@+id/Currency"
+                app:layout_constraintTop_toBottomOf="@+id/Currency" />
+
+            <Button
+                android:id="@+id/sendMoney"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/addmoneybutton"
+                android:text="@string/sent"
+                android:textColor="@color/darkBlue"
+                android:textStyle="bold"
+                app:backgroundTint="@null"
+                app:icon="@drawable/baseline_arrow_forward_24"
+                app:iconPadding="0dp"
+                app:iconTint="@color/darkBlue"
+                app:layout_constraintEnd_toStartOf="@+id/moreOptions"
+                app:layout_constraintStart_toEndOf="@+id/addMoney"
+                app:layout_constraintTop_toTopOf="@+id/addMoney" />
+
+            <Button
+                android:id="@+id/moreOptions"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/addmoneybutton"
+                android:text="@string/optionsmore"
+                android:textColor="@color/darkBlue"
+                android:textStyle="bold"
+                app:backgroundTint="@null"
+                app:iconPadding="4dp"
+                app:iconTint="@color/darkBlue"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/addMoney" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/TransactionRecycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="20dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/moreOptions"
+                app:layout_constraintStart_toStartOf="@+id/BalanceView"
+                app:layout_constraintTop_toBottomOf="@+id/RecyclerTitle"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/RecyclerTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:fontFamily="sans-serif-medium"
+                android:text="@string/RecyclerTitleText"
+                android:textColor="@color/grey"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/addMoney"
+                app:layout_constraintTop_toBottomOf="@+id/addMoney" />
+
+            <TextView
+                android:id="@+id/ExpandRecycler"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:fontFamily="sans-serif-medium"
+                android:text="@string/ExpandRecyclerText"
+                android:textColor="@color/blue"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/moreOptions"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@+id/RecyclerTitle"
+                app:layout_constraintTop_toBottomOf="@+id/moreOptions" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,15 +5,17 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.hayatwallet.R
 import com.example.hayatwallet.databinding.FragmentLoginBinding
 import com.example.hayatwallet.databinding.FragmentWalletHubBinding
 import com.example.hayatwallet.network.response.TransactionHistoryData
+import java.io.Serializable
 
 class WalletHubFragment : Fragment() {
     private lateinit var binding:FragmentWalletHubBinding
-    private lateinit var data:List<TransactionHistoryData>
+    private lateinit var data:MutableList<TransactionHistoryData>
     private var transactionAdapter=TransactionHistoryAdapter(3,arrayListOf())
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,25 +36,24 @@ class WalletHubFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setupRecyclerView()
-        val companies = listOf(
-            "Google",
-            "Apple",
-            "Microsoft",
-            "Amazon",
-            "Facebook",
-            "Tesla",
-            "Netflix",
-            "Adobe",
-            "Intel",
-            "IBM"
+        val companies = mutableListOf(
+            TransactionHistoryData("Google"),
+            TransactionHistoryData(
+            "Apple"),
+            TransactionHistoryData("Microsoft"),
+            TransactionHistoryData("Amazon"),
+            TransactionHistoryData("Facebook"),
+            TransactionHistoryData("Tesla"),
         )
-        data=companies.map { TransactionHistoryData(it) }
+        data=companies
         transactionAdapter.updateData(data)
         var isExpanded=false
         binding.ExpandRecycler.setOnClickListener {
-            transactionAdapter.updateMaxItems(isExpanded)
-            isExpanded=!isExpanded
-        transactionAdapter.notifyDataSetChanged()}
+            val bundle = Bundle().apply {
+                putSerializable("companyName" ,data as ArrayList<*>)
+            }
+         findNavController().navigate(R.id.toFullTransactionHistory,bundle)
+        }
     }
     companion object {
 

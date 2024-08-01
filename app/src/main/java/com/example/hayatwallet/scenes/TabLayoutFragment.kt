@@ -5,11 +5,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import com.example.hayatwallet.R
 import com.example.hayatwallet.databinding.FragmentLoginBinding
 import com.example.hayatwallet.databinding.FragmentTabLayoutBinding
-
-
+import com.google.android.material.tabs.TabLayoutMediator
 
 
 class TabLayoutFragment : Fragment() {
@@ -30,29 +30,31 @@ class TabLayoutFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val adapter = ViewPageAdapter(requireActivity())
+
+        setupViewPager()
+    }
+    private fun setupViewPager() {
+        val adapter =ViewPageAdapter(requireActivity())
         binding.viewPager.adapter = adapter
 
-        binding.homeTxt.setOnClickListener {
-            //currentTab()
-            binding.viewPager.currentItem = 0
-        }
-
-        binding.campaingTxt.setOnClickListener {
-           // currentTab()
-            binding.viewPager.currentItem = 1
-        }
-
-        binding.personTxt.setOnClickListener {
-            //currentTab()
-            binding.viewPager.currentItem = 2
-        }
+        TabLayoutMediator(binding.tablayout, binding.viewPager) { tab, position ->
+            when (position) {
+                0 -> {
+                    tab.text = "Ana Sayfa"
+                    tab.icon = ContextCompat.getDrawable(requireContext(), R.drawable.ic_home)
+                }
+                1 -> {
+                    tab.text = "Kampanyalar"
+                    tab.icon = ContextCompat.getDrawable(requireContext(), R.drawable.ic_campaign)
+                }
+                2 -> {
+                    tab.text = "Profil"
+                    tab.icon = ContextCompat.getDrawable(requireContext(), R.drawable.ic_profile)
+                }
+            }
+        }.attach()
     }
-    fun currentTab(){
-        binding.homeTxt.background = resources.getDrawable(R.color.white,resources.newTheme())
-        binding.campaingTxt.background = resources.getDrawable(R.color.white,resources.newTheme())
-        binding.personTxt.background = resources.getDrawable(R.color.white,resources.newTheme())
-    }
+
     companion object {
 
 

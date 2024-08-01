@@ -54,6 +54,18 @@
                       </LayoutPositions>
                     </value>
                   </entry>
+                  <entry key="fullTransactionHistory">
+                    <value>
+                      <LayoutPositions>
+                        <option name="myPosition">
+                          <Point>
+                            <option name="x" value="138" />
+                            <option name="y" value="705" />
+                          </Point>
+                        </option>
+                      </LayoutPositions>
+                    </value>
+                  </entry>
                   <entry key="landingFragment">
                     <value>
                       <LayoutPositions>

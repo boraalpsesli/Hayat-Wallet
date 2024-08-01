@@ -1,3 +1,5 @@
 package com.example.hayatwallet.network.response
 
-data class TransactionHistoryData(val companyName:String?)
+import java.io.Serializable
+
+data class TransactionHistoryData(val companyName:String?):Serializable

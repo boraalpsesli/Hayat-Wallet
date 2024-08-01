@@ -7,75 +7,45 @@
     android:background="@color/white"
     tools:context=".scenes.TabLayoutFragment">
 
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tablayout"
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:icon="@drawable/ic_home"
+            android:text="Ana Sayfa" />
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:icon="@drawable/ic_campaign"
+            android:text="Kampanyalar" />
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:icon="@drawable/ic_profile"
+            android:text="Profil" />
+    </com.google.android.material.tabs.TabLayout>
+
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/viewPager"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:background="@color/lightGrey"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/tableLayout"
+        app:layout_constraintBottom_toTopOf="@+id/tablayout"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <TableLayout
-        android:id="@+id/tableLayout"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="1dp"
-        android:stretchColumns="0,1,2"
-        android:background="@color/darkGrey"
-        app:layout_constraintTop_toBottomOf="@id/viewPager"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+    </androidx.viewpager2.widget.ViewPager2>
 
-        <TableRow
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
 
-            <TextView
-                android:id="@+id/homeTxt"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@drawable/tab_item_background"
-                android:fontFamily="sans-serif-medium"
-                android:gravity="center"
-                android:text="@string/ana_sayfa"
-                android:textColor="@color/black"
-                android:textSize="16sp"
-                android:padding="10dp"
-                android:drawableTop="@drawable/ic_home" />
-
-            <TextView
-                android:id="@+id/campaingTxt"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@drawable/tab_item_background"
-                android:fontFamily="sans-serif-medium"
-                android:gravity="center"
-                android:text="@string/kampanyalar"
-                android:textColor="@color/black"
-                android:textSize="16sp"
-                android:padding="10dp"
-                android:drawableTop="@drawable/ic_campaign" />
-
-            <TextView
-                android:id="@+id/personTxt"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@drawable/tab_item_background"
-                android:fontFamily="sans-serif-medium"
-                android:gravity="center"
-                android:text="@string/profil"
-                android:textColor="@color/black"
-                android:textSize="16sp"
-                android:padding="10dp"
-                android:drawableTop="@drawable/ic_profile" />
-
-        </TableRow>
-    </TableLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
