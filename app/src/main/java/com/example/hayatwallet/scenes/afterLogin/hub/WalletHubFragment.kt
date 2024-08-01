@@ -1,4 +1,4 @@
-package com.example.hayatwallet.scenes
+package com.example.hayatwallet.scenes.afterLogin.hub
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,15 +8,14 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.hayatwallet.R
-import com.example.hayatwallet.databinding.FragmentLoginBinding
 import com.example.hayatwallet.databinding.FragmentWalletHubBinding
 import com.example.hayatwallet.network.response.TransactionHistoryData
-import java.io.Serializable
+import com.example.hayatwallet.scenes.afterLogin.transaction.adapter.TransactionHistoryAdapter
 
 class WalletHubFragment : Fragment() {
     private lateinit var binding:FragmentWalletHubBinding
     private lateinit var data:MutableList<TransactionHistoryData>
-    private var transactionAdapter=TransactionHistoryAdapter(3,arrayListOf())
+    private var transactionAdapter= TransactionHistoryAdapter(3,arrayListOf())
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 

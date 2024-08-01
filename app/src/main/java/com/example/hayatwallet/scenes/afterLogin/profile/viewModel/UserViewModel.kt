@@ -1,4 +1,4 @@
-package com.example.hayatwallet.scenes
+package com.example.hayatwallet.scenes.afterLogin.profile.viewModel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel

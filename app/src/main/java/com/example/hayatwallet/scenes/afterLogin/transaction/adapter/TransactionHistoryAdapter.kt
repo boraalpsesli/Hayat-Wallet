@@ -1,4 +1,4 @@
-package com.example.hayatwallet.scenes
+package com.example.hayatwallet.scenes.afterLogin.transaction.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

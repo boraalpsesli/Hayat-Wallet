@@ -1,4 +1,4 @@
-package com.example.hayatwallet.scenes
+package com.example.hayatwallet.scenes.afterLogin.transaction
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,13 +7,13 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.hayatwallet.R
 import com.example.hayatwallet.databinding.FragmentFullTransactionHistoryBinding
 import com.example.hayatwallet.network.response.TransactionHistoryData
+import com.example.hayatwallet.scenes.afterLogin.transaction.adapter.TransactionHistoryAdapter
 
 class FullTransactionHistory : Fragment() {
     private lateinit var binding:FragmentFullTransactionHistoryBinding
-    private var transactionAdapter=TransactionHistoryAdapter(100,arrayListOf())
+    private var transactionAdapter= TransactionHistoryAdapter(100,arrayListOf())
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/landingFragment"
-        android:name="com.example.hayatwallet.scenes.LandingFragment"
+        android:name="com.example.hayatwallet.scenes.landingPage.LandingFragment"
         android:label="fragment_landing"
         tools:layout="@layout/fragment_landing" >
 
@@ -15,7 +15,7 @@
 
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.example.hayatwallet.scenes.LoginFragment"
+        android:name="com.example.hayatwallet.scenes.login.LoginFragment"
             android:label="fragment_login"
         tools:layout="@layout/fragment_login" >
 
@@ -29,24 +29,35 @@
     <action
         android:id="@+id/toCampaignDetails"
         app:destination="@id/campaignDetails"
-        app:exitAnim="@anim/nav_default_exit_anim" />
+        app:enterAnim="@drawable/nav_slide_in_right"
+        app:exitAnim="@drawable/nav_slide_out_left"
+        app:popExitAnim="@drawable/nav_slide_out_right"
+        app:popEnterAnim="@drawable/nav_slide_in_left"
+        />
     <action
         android:id="@+id/toLoginActivity"
         app:destination="@id/loginFragment"
-        app:exitAnim="@anim/nav_default_exit_anim" />
+        app:enterAnim="@drawable/nav_slide_in_right"
+        app:exitAnim="@drawable/nav_slide_out_left"
+        app:popExitAnim="@drawable/nav_slide_out_right"
+        app:popEnterAnim="@drawable/nav_slide_in_left" />
     <action
         android:id="@+id/toFullTransactionHistory"
-        app:destination="@id/fullTransactionHistory" />
+        app:destination="@id/fullTransactionHistory"
+        app:enterAnim="@drawable/nav_slide_in_right"
+        app:exitAnim="@drawable/nav_slide_out_left"
+        app:popExitAnim="@drawable/nav_slide_out_right"
+        app:popEnterAnim="@drawable/nav_slide_in_left" />
     <fragment
         android:id="@+id/tabLayoutFragment"
-        android:name="com.example.hayatwallet.scenes.TabLayoutFragment"
+        android:name="com.example.hayatwallet.scenes.afterLogin.TabLayoutFragment"
         android:label="fragment_tab_layout"
         tools:layout="@layout/fragment_tab_layout" >
 
     </fragment>
     <fragment
         android:id="@+id/campaignDetails"
-        android:name="com.example.hayatwallet.scenes.CampaignDetails"
+        android:name="com.example.hayatwallet.scenes.afterLogin.campaign.CampaignDetails"
         android:label="fragment_campaign_details"
         tools:layout="@layout/fragment_campaign_details" >
         <argument
@@ -57,7 +68,7 @@
             app:argType="string" /></fragment>
     <fragment
         android:id="@+id/fullTransactionHistory"
-        android:name="com.example.hayatwallet.scenes.FullTransactionHistory"
+        android:name="com.example.hayatwallet.scenes.afterLogin.transaction.FullTransactionHistory"
         android:label="fragment_full_transaction_history"
         tools:layout="@layout/fragment_full_transaction_history" />
 

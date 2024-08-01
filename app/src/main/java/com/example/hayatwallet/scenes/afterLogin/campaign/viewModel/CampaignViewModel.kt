@@ -1,6 +1,5 @@
-package com.example.hayatwallet.scenes
+package com.example.hayatwallet.scenes.afterLogin.campaign.viewModel
 
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.hayatwallet.network.response.CampaignItemView
 import org.jsoup.Jsoup

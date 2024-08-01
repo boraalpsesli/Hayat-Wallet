@@ -1,21 +1,14 @@
-package com.example.hayatwallet.scenes
+package com.example.hayatwallet.scenes.afterLogin.campaign.adapter
 
 import android.os.Bundle
-import android.provider.Settings.Global.putString
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import androidx.core.os.bundleOf
 import androidx.navigation.Navigation
-import androidx.navigation.fragment.NavHostFragment.Companion.findNavController
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.hayatwallet.R
 import com.example.hayatwallet.databinding.CampaignCardRowBinding
-import com.example.hayatwallet.databinding.FragmentWalletHubBinding
 import com.example.hayatwallet.network.response.CampaignItemView
-import com.example.hayatwallet.scenes.CampaignDetailsDirections
 
 class CampaignAdapter(private val campaignList:List<CampaignItemView>):RecyclerView.Adapter<CampaignAdapter.CampaignHolder>() {
 

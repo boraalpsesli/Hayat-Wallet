@@ -1,19 +1,13 @@
-package com.example.hayatwallet.scenes
+package com.example.hayatwallet.scenes.landingPage
 
 import android.os.Bundle
-import android.text.Layout
-import android.text.SpannableStringBuilder
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.text.bold
 import androidx.navigation.fragment.findNavController
-import com.example.hayatwallet.R
 import com.example.hayatwallet.databinding.FragmentLandingBinding
-import androidx.navigation.Navigation
-import androidx.navigation.findNavController
-import com.example.hayatwallet.scenes.LoginFragmentDirections
+import com.example.hayatwallet.scenes.login.LoginFragmentDirections
 
 class LandingFragment : Fragment() {
 

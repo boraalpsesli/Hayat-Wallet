@@ -1,4 +1,4 @@
-package com.example.hayatwallet.scenes
+package com.example.hayatwallet.scenes.afterLogin.campaign
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,14 +7,14 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.hayatwallet.R
 import com.example.hayatwallet.databinding.FragmentCampaignFragementBinding
-import com.example.hayatwallet.network.response.CampaignItemView
+import com.example.hayatwallet.scenes.afterLogin.campaign.adapter.CampaignAdapter
+import com.example.hayatwallet.scenes.afterLogin.campaign.viewModel.CampaignViewModel
 
 
 class CampaignFragement : Fragment() {
         private lateinit var binding:FragmentCampaignFragementBinding
-        private val viewModel:CampaignViewModel by viewModels()
+        private val viewModel: CampaignViewModel by viewModels()
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -37,7 +37,7 @@ class CampaignFragement : Fragment() {
         Thread {
             viewModel.getData { campaigns ->
                 activity?.runOnUiThread {
-                    val adapter=CampaignAdapter(campaigns)
+                    val adapter= CampaignAdapter(campaigns)
                     binding.CampaignRecyclerView.layoutManager=LinearLayoutManager(context)
                     binding.CampaignRecyclerView.adapter= adapter}
 

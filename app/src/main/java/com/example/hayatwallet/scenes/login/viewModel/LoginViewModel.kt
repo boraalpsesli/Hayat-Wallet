@@ -1,18 +1,13 @@
-package com.example.hayatwallet.scenes
+package com.example.hayatwallet.scenes.login.viewModel
 
-import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.hayatwallet.network.Network
 import com.example.hayatwallet.network.TokenManager
-import com.example.hayatwallet.network.response.Item
 import com.example.hayatwallet.network.response.LoginRequest
 import com.example.hayatwallet.network.response.LoginResponse
-import com.example.hayatwallet.network.response.getUserResponse
 import retrofit2.Call
-import retrofit2.Callback
 import retrofit2.Response
-import kotlin.math.log
 
 class LoginViewModel:ViewModel() {
     val loginData=MutableLiveData<LoginResponse?>()

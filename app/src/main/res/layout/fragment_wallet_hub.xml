@@ -7,7 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/shadow_background"
-    tools:context=".scenes.WalletHubFragment">
+    tools:context=".scenes.afterLogin.hub.WalletHubFragment">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
@@ -59,23 +59,27 @@
 
             <Button
                 android:id="@+id/addMoney"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="40dp"
                 android:layout_marginTop="20dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
                 android:background="@drawable/addmoneybutton"
                 android:text="@string/addMoney"
                 android:textColor="@color/darkBlue"
                 android:textStyle="bold"
                 app:backgroundTint="@null"
-                app:layout_constraintStart_toStartOf="@+id/Currency"
+                app:layout_constraintEnd_toStartOf="@+id/sendMoney"
+                app:layout_constraintHorizontal_chainStyle="spread"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/Currency" />
 
             <Button
                 android:id="@+id/sendMoney"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="40dp"
-                android:layout_marginStart="20dp"
-                android:layout_marginEnd="20dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
                 android:background="@drawable/addmoneybutton"
                 android:text="@string/sent"
                 android:textColor="@color/darkBlue"
@@ -90,9 +94,10 @@
 
             <Button
                 android:id="@+id/moreOptions"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="40dp"
-                android:layout_marginEnd="20dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
                 android:background="@drawable/addmoneybutton"
                 android:text="@string/optionsmore"
                 android:textColor="@color/darkBlue"
@@ -101,21 +106,8 @@
                 app:iconPadding="4dp"
                 app:iconTint="@color/darkBlue"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/sendMoney"
                 app:layout_constraintTop_toTopOf="@+id/addMoney" />
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/TransactionRecycler"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="30dp"
-                android:layout_marginRight="20dp"
-                android:layout_marginBottom="20dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="@+id/moreOptions"
-                app:layout_constraintStart_toStartOf="@+id/BalanceView"
-                app:layout_constraintTop_toBottomOf="@+id/RecyclerTitle"
-                app:layout_constraintVertical_bias="0.0" />
 
             <TextView
                 android:id="@+id/RecyclerTitle"
@@ -131,6 +123,20 @@
                 app:layout_constraintStart_toStartOf="@+id/addMoney"
                 app:layout_constraintTop_toBottomOf="@+id/addMoney" />
 
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/TransactionRecycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="20dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/RecyclerTitle"
+                app:layout_constraintVertical_bias="0.0" />
+
             <TextView
                 android:id="@+id/ExpandRecycler"
                 android:layout_width="wrap_content"
@@ -145,6 +151,7 @@
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toEndOf="@+id/RecyclerTitle"
                 app:layout_constraintTop_toBottomOf="@+id/moreOptions" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>

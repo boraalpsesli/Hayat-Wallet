@@ -1,4 +1,4 @@
-package com.example.hayatwallet.scenes
+package com.example.hayatwallet.scenes.afterLogin
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,8 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import com.example.hayatwallet.R
-import com.example.hayatwallet.databinding.FragmentLoginBinding
 import com.example.hayatwallet.databinding.FragmentTabLayoutBinding
+import com.example.hayatwallet.scenes.afterLogin.adapter.ViewPageAdapter
 import com.google.android.material.tabs.TabLayoutMediator
 
 
@@ -34,7 +34,7 @@ class TabLayoutFragment : Fragment() {
         setupViewPager()
     }
     private fun setupViewPager() {
-        val adapter =ViewPageAdapter(requireActivity())
+        val adapter = ViewPageAdapter(requireActivity())
         binding.viewPager.adapter = adapter
 
         TabLayoutMediator(binding.tablayout, binding.viewPager) { tab, position ->
