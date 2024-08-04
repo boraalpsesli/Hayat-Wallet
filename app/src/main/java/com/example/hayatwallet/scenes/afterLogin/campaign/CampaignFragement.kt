@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.hayatwallet.databinding.FragmentCampaignFragementBinding
 import com.example.hayatwallet.scenes.afterLogin.campaign.adapter.CampaignAdapter
@@ -15,7 +16,7 @@ import com.example.hayatwallet.scenes.afterLogin.campaign.viewModel.CampaignView
 class CampaignFragement : Fragment() {
         private lateinit var binding:FragmentCampaignFragementBinding
         private val viewModel: CampaignViewModel by viewModels()
-
+        private lateinit var campaignAdapter: CampaignAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,17 +35,15 @@ class CampaignFragement : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
         super.onViewCreated(view, savedInstanceState)
-        Thread {
-            viewModel.getData { campaigns ->
-                activity?.runOnUiThread {
-                    val adapter= CampaignAdapter(campaigns)
-                    binding.CampaignRecyclerView.layoutManager=LinearLayoutManager(context)
-                    binding.CampaignRecyclerView.adapter= adapter}
-
-
-            }
-        }.start()
-
+        val recyclerView = binding.CampaignRecyclerView
+        recyclerView.layoutManager = LinearLayoutManager(requireContext())
+        campaignAdapter = CampaignAdapter(emptyList())
+        recyclerView.adapter = campaignAdapter
+        viewModel.campaigns.observe(viewLifecycleOwner, Observer { campaigns->
+            campaignAdapter=CampaignAdapter(campaigns)
+            recyclerView.adapter=campaignAdapter
+        })
+        viewModel.getData()
 
     }
     companion object {
