@@ -30,6 +30,14 @@ class CampaignSliderAdapter(private val campaignList:List<CampaignItemView>):
     }
     class CHolder(private var binding: CampaignSliderRowBinding): RecyclerView.ViewHolder(binding.root){
         fun bind(item: CampaignItemView){
-            Glide.with(binding.campaignImg.context).load(item.imageUrl).into(binding.campaignImg)                }
+            Glide.with(binding.campaignImg.context).load(item.imageUrl).into(binding.campaignImg)
+            binding.CardItem.setOnClickListener{
+                val bundle = Bundle().apply {
+                    putString("title", item.title)
+                    putString("imageUrl", item.imageUrl)
+                }
+                Navigation.findNavController(it).navigate(R.id.toCampaignDetails,bundle)
+            }
+            }
         }
     }

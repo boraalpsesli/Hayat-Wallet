@@ -7,7 +7,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.example.hayatwallet.databinding.FragmentLandingBinding
+import com.example.hayatwallet.scenes.NameSharedPref
 import com.example.hayatwallet.scenes.login.LoginFragmentDirections
+import com.example.hayatwallet.scenes.login.LoginFragmentSharedPref
+import com.example.hayatwallet.scenes.login.LoginFragmentSharedPrefDirections
+import java.util.jar.Attributes.Name
 
 class LandingFragment : Fragment() {
 
@@ -28,10 +32,17 @@ class LandingFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+          NameSharedPref.init(requireContext())
         binding.RegisteredButton.setOnClickListener {
-            findNavController().navigate(
+            val tempToken=NameSharedPref.getString("user_token")
+            val tempId=NameSharedPref.getString("user_ID")
+            if(tempId!=null){
+                findNavController().navigate(LoginFragmentSharedPrefDirections.toSharedPrefLogin())
+            }
+            else{findNavController().navigate(
                 LoginFragmentDirections.toLoginActivity()
-            )
+            )}
+
         }
     }
 

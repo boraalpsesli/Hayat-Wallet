@@ -54,6 +54,7 @@
         android:label="fragment_tab_layout"
         tools:layout="@layout/fragment_tab_layout" >
 
+
     </fragment>
     <fragment
         android:id="@+id/campaignDetails"
@@ -72,7 +73,17 @@
         android:label="fragment_full_transaction_history"
         tools:layout="@layout/fragment_full_transaction_history" />
 
-
+    <fragment
+        android:id="@+id/loginFragmentSharedPref"
+        android:name="com.example.hayatwallet.scenes.login.LoginFragmentSharedPref"
+        android:label="fragment_login_shared_pref"
+        tools:layout="@layout/fragment_login_shared_pref" />
+    <action
+        android:id="@+id/LogingOut"
+        app:destination="@id/landingFragment" />
+    <action
+        android:id="@+id/toSharedPrefLogin"
+        app:destination="@id/loginFragmentSharedPref" />
 
 
 </navigation>

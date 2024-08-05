@@ -12,7 +12,7 @@ import retrofit2.http.POST
 interface ApiInterface {
     @POST("User/signin")
     fun login(@Body userData:LoginRequest): Call<LoginResponse>
-    @GET("user/viewuser")
+    @GET("User/viewuser")
     fun getUser(@Header("Authorization") token:String):Call<getUserResponse>
 
 }

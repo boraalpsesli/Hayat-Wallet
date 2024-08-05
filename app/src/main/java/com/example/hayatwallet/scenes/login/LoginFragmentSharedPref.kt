@@ -9,17 +9,17 @@ import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
+import com.bumptech.glide.Glide
+import com.example.hayatwallet.R
 import com.example.hayatwallet.databinding.FragmentLoginBinding
-import com.example.hayatwallet.network.TokenManager
+import com.example.hayatwallet.databinding.FragmentLoginSharedPrefBinding
 import com.example.hayatwallet.scenes.NameSharedPref
 import com.example.hayatwallet.scenes.afterLogin.TabLayoutFragmentDirections
 import com.example.hayatwallet.scenes.login.viewModel.LoginViewModel
 import com.google.android.material.snackbar.Snackbar
 
-
-class LoginFragment : Fragment() {
-    private lateinit var binding: FragmentLoginBinding
-    val tempPass="123456789Aa@"
+class LoginFragmentSharedPref : Fragment() {
+    private lateinit var binding: FragmentLoginSharedPrefBinding
     private val viewModel: LoginViewModel by viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,7 +31,7 @@ class LoginFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         // Inflate the layout for this fragment
-        binding = FragmentLoginBinding.inflate(layoutInflater)
+        binding = FragmentLoginSharedPrefBinding.inflate(layoutInflater)
         return binding.root
     }
 
@@ -39,8 +39,10 @@ class LoginFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         loginSetup()
 
+        binding.welcomeMessage.text="Hoş Geldiniz " + NameSharedPref.getString("user_ID")
         binding.LogInButton.setOnClickListener {
-            val tempId="ararat2@oktein.com"
+            val tempPass="123456789Aa@"
+            val tempId=NameSharedPref.getString("user_ID")
             //Do not forget to give input field values later
             viewModel.login(tempId,tempPass)
         }
@@ -49,11 +51,8 @@ class LoginFragment : Fragment() {
     private fun loginSetup(){
         viewModel.loginData.observe(viewLifecycleOwner, Observer { login->
             if(login?.item?.isSuccess==true){
-                NameSharedPref.putString("user_token",login.item.token)
-                NameSharedPref.putString("user_ID","ararat2@oktein.com")
                 Log.e("Token","${login.item.token}")
-                Snackbar.make(binding.root, "Başarılı Giriş${binding.idInput.text}!", Snackbar.LENGTH_LONG).show()
-
+                Snackbar.make(binding.root, "Başarılı Giriş  ${NameSharedPref.getString("full_name")}", Snackbar.LENGTH_LONG).show()
                 findNavController().navigate(TabLayoutFragmentDirections.toHub())
             }
 
@@ -63,6 +62,6 @@ class LoginFragment : Fragment() {
 
         @JvmStatic
         fun newInstance() =
-            LoginFragment()
+            LoginFragmentSharedPref()
     }
 }
